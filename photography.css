@@ -1,40 +1,48 @@
 /* ============================================================
    photography.css: used ONLY by photography.html.
-   Loaded after style.css, so these rules win where they overlap.
+   Loaded after style.css; it changes colours and adds photo
+   layout, but leaves the font, title and menu size/spacing
+   exactly as on index.html and teaching.html.
    ============================================================ */
 
-/* ---------- Page and header colours ----------
-   The page background matches the first (dark) section,
-   so the header sits on the same colour.               */
-body.photo-page { background: #111; color: #eee; }
+/* ---------- Page colours (the equivalent of bgcolor on your other pages) ---------- */
+body.photo-page {
+  background: #000;
+  color: #eee;
+  margin: 0;              /* lets coloured sections reach the window edges...       */
+}
+.photo-page > h1,
+.photo-page > .navbar {
+  margin-left: 8px;       /* ...while the title and menu keep the browser's default */
+  margin-right: 8px;      /*    8px edge, exactly as on your other pages            */
+}
+.photo-page > h1 { color: #fff; }                  /* title colour */
 
-.photo-page .site-header { color: #fff; }          /* site title */
-.photo-page .navbar      { border-bottom-color: #444; }
-.photo-page .navbar a    { color: #e8e8e8; }       /* <- menu font colour */
-.photo-page .navbar a:hover,
-.photo-page .navbar a.active { color: #fff; border-bottom-color: #fff; }
+/* ---------- Menu colours on this page ---------- */
+.photo-page .navbar   { border-bottom-color: #555; }
+.photo-page .navbar a { color: #e8e8e8; }          /* <- menu font colour */
+.photo-page .navbar a.active,
+.photo-page .navbar a:hover { color: #fff; border-bottom-color: #fff; }
 
 /* ---------- Coloured sections ----------
-   Each section sets a background AND a text colour.
-   Headings, paragraphs and captions inherit the text colour. */
-.band        { padding: 3rem 1rem; }
-.band .inner { max-width: 900px; margin: 0 auto; }
+   Each sets a background AND a text colour, inherited by
+   everything inside. Add more by copying a line.          */
+.band       { padding: 1.5rem 8px; }   /* 8px: text lines up with the title */
+.band.dark  { background: #000000; color: #eeeeee; }
+.band.light { background: #ffffff; color: #111111; }
+.band.warm  { background: #efe9df; color: #2b2b2b; }
 
-.band.dark   { background: #111111; color: #eeeeee; }
-.band.light  { background: #ffffff; color: #111111; }
-.band.warm   { background: #efe9df; color: #2b2b2b; }
+.band.dark a { color: #9cc3ff; }       /* readable text links on black */
 
-.band.dark a { color: #9cc3ff; }   /* readable text links on dark backgrounds */
-
-/* ---------- Photo size and position ---------- */
-.photo { margin: 0 auto 3rem; }    /* removes <figure>'s default indent, centres it */
+/* ---------- Photos ---------- */
+.photo { margin: 0 auto 3rem; }        /* removes <figure>'s default indent; centres */
 .photo img {
   display: block;
-  max-width: 100%;                 /* never wider than its container          */
-  max-height: 85vh;                /* never taller than 85% of the screen     */
+  max-width: 100%;                     /* never wider than the window          */
+  max-height: 85vh;                    /* never taller than 85% of the screen  */
   width: auto;
-  height: auto;                    /* keep the original proportions           */
-  margin: 0 auto;                  /* centre                                   */
+  height: auto;                        /* keep proportions                     */
+  margin: 0 auto;                      /* centre                               */
 }
 
 /* Size variants: add to the <figure>, e.g. class="photo medium" */
@@ -48,7 +56,6 @@ body.photo-page { background: #111; color: #eee; }
 /* ---------- Captions ---------- */
 .photo figcaption {
   margin-top: 0.6rem;
-  font-size: 0.95rem;
   font-style: italic;
   text-align: center;
   opacity: 0.8;
