@@ -1,22 +1,63 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photography | Hunter A. Stufflebeam</title>
   <link rel="stylesheet" href="style.css">
-<head> <title> Hunter Stufflebeam Math Homepage </title> <meta name="google-site-verification" content="LWBNPp2l023gXlW2O65iqwo56pUMJD3A15ZQp82Kzog" /> </head>
-<body bgcolor="#000"> ;
-<h1 style="color:white;"> The Online Abode (Lair?) of Hunter A. Stufflebeam </h1>
+  <link rel="stylesheet" href="photography.css">
+</head>
+<body class="photo-page">
 
-  <nav class="navbar">
-  <a href="index.html">Mathematical Research</a>
-  <a href="teaching.html">Teaching and Mentoring</a>
-  <a href="photography.html">Photography</a>
-  <a href="projects.html">Other Projects</a>
-</nav>
+  <!-- ===== Shared header: identical on every page except for class="active" ===== -->
+  <header class="site-header">
+    <h1 class="site-title">The Online Abode (Lair?) of Hunter A. Stufflebeam</h1>
+    <nav class="navbar">
+      <a href="index.html">Mathematical Research</a>
+      <a href="teaching.html">Teaching and Mentoring</a>
+      <a href="photography.html" class="active">Photography</a>
+      <a href="projects.html">Other Projects</a>
+    </nav>
+  </header>
 
+  <!-- ===== Section 1: dark ===== -->
+  <section class="band dark">
+    <div class="inner">
+      <p>Wassup :)</p>
 
-<a href="files/photographs/Tyndall-Gorge-from-Emerald-Lake-RMNP.jpg">
-  <img src="files/photographs/Tyndall-Gorge-from-Emerald-Lake-RMNP.jpg" alt="Tyndall Gorge from Emerald Lake, RMNP" loading="lazy">
-</a>
+      <figure class="photo">
+        <a href="files/photographs/Tyndall-Gorge-from-Emerald-Lake-RMNP.jpg">
+          <img src="files/photographs/Tyndall-Gorge-from-Emerald-Lake-RMNP.jpg"
+               alt="Tyndall Gorge from Emerald Lake, Rocky Mountain National Park" loading="lazy">
+        </a>
+        <figcaption>Tyndall Gorge from Emerald Lake, Rocky Mountain National Park.</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  
-<p> Wassup :) </p>
+  <!-- ===== Section 2: light (template; uncomment and fill in) =====
+  <section class="band light">
+    <div class="inner">
+      <h2>Section title</h2>
+
+      <figure class="photo medium">
+        <img src="files/photographs/YOUR-FILE.jpg" alt="Description" loading="lazy">
+        <figcaption>Caption.</figcaption>
+      </figure>
+
+      <div class="photo-row">
+        <figure class="photo">
+          <img src="files/photographs/LEFT.jpg" alt="Description" loading="lazy">
+          <figcaption>Left caption.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="files/photographs/RIGHT.jpg" alt="Description" loading="lazy">
+          <figcaption>Right caption.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  ===== end of template ===== -->
+
+</body>
+</html>
