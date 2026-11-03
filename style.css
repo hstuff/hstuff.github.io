@@ -1,37 +1,10 @@
-/* ============================================================
-   style.css: shared by EVERY page on the site.
-   Page-specific styles go in their own file (e.g. photography.css).
-   ============================================================ */
-
-/* ---------- Basics ---------- */
-*, *::before, *::after { box-sizing: border-box; }
-html { scrollbar-gutter: stable; }     /* stops the layout shifting between
-                                           long and short pages             */
-body {
-  margin: 0;
-  font-family: "Lucida Console", Monaco, Menlo, monospace;
-  background: #ffffff;
-  color: #111111;
-  line-height: 1.5;
-}
-img { max-width: 100%; height: auto; } /* no image ever overflows its column */
-
-/* ---------- Header: site title + menu, full window width ---------- */
-.site-header {
-  padding: 1rem 1rem 0;               /* side gutter; change 1rem to 0.5rem
-                                          for the exact spacing of your old page */
-}
-.site-title {
-  margin: 0 0 0.5rem;
-  font-size: 2rem;
-}
-
+body { font-family: Lucida Console, Monospace; }
 .navbar {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;                    /* wraps instead of overflowing on phones */
   border-bottom: 1px solid #ccc;
   padding: 0.75rem 0;
+  margin-bottom: 2rem;
 }
 .navbar a {
   font-size: 1.3rem;
@@ -40,13 +13,4 @@ img { max-width: 100%; height: auto; } /* no image ever overflows its column */
   color: #333;
   padding-bottom: 0.25rem;
 }
-.navbar a.active,
-.navbar a:hover { border-bottom: 2px solid #333; }
-
-/* ---------- Main content column (used on ordinary pages) ---------- */
-.content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
+.navbar a.active, .navbar a:hover { border-bottom: 2px solid #333; }
