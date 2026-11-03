@@ -1,0 +1,91 @@
+/* ============================================================
+   photography.css: styles used ONLY by photography.html.
+   Loaded after style.css, so these rules override it here.
+   ============================================================ */
+
+/* ---------- Page setup ----------
+   Let the coloured sections span the full window width.
+   The page background matches the first (dark) section,
+   so the menu bar sits on the same colour.               */
+body.photo-page {
+  max-width: none;
+  margin: 0;
+  padding: 1rem 0 0;
+  background: #111;
+}
+
+/* ---------- (1) Menu bar on this page ---------- */
+.photo-page .navbar {
+  width: calc(100% - 2rem);   /* 1rem gutter each side on narrow screens */
+  max-width: 900px;           /* same width as the content column        */
+  margin: 0 auto;
+  border-bottom-color: #444;
+}
+.photo-page .navbar a {
+  color: #e8e8e8;             /* <- menu font colour on this page */
+}
+.photo-page .navbar a:hover,
+.photo-page .navbar a.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* ---------- (4) Coloured sections ----------
+   Each section sets a background AND a text colour.
+   Headings, paragraphs and captions inherit the text colour. */
+.band        { padding: 3rem 1rem; }
+.band .inner { max-width: 900px; margin: 0 auto; }
+
+.band.dark   { background: #111111; color: #eeeeee; }
+.band.light  { background: #ffffff; color: #111111; }
+.band.warm   { background: #efe9df; color: #2b2b2b; }
+
+/* Ordinary links inside text need a readable colour on dark backgrounds */
+.band.dark a { color: #9cc3ff; }
+
+/* ---------- (2) Photo size and position ---------- */
+.photo {
+  margin: 0 auto 3rem;        /* removes the browser's default indent on <figure>,
+                                 centres it, and leaves space below          */
+}
+.photo img {
+  display: block;
+  max-width: 100%;            /* never wider than its container           */
+  max-height: 85vh;           /* never taller than 85% of the screen,
+                                 so portrait photos stay viewable         */
+  width: auto;
+  height: auto;               /* keep the original proportions            */
+  margin: 0 auto;             /* centre the image                         */
+}
+
+/* Size variants: add to the <figure>, e.g. class="photo medium" */
+.photo.medium { max-width: 70%; }
+.photo.small  { max-width: 45%; }
+
+/* Two (or more) photos side by side */
+.photo-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.photo-row .photo {
+  flex: 1;                    /* equal share of the width */
+  min-width: 0;
+}
+
+/* ---------- (3) Captions ---------- */
+.photo figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.8;               /* slightly softer than body text, in whatever
+                                 colour the section uses                     */
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .photo.medium,
+  .photo.small { max-width: 100%; }   /* small photos go full width   */
+  .photo-row   { flex-direction: column; }  /* side-by-side photos stack */
+}
